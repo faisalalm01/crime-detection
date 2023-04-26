@@ -4,13 +4,15 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+clone repo
+`git clone https://github.com/faisalalm01/crime-detection`
 
-A few resources to get you started if this is your first Flutter project:
+install dependencies
+`pub install || get install` 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## design app
+design app on figma - 
+[design app](https://www.figma.com/file/vpJJpXYxzYP8geZu3GaasN/ui?node-id=0%3A1&t=R9N1Pd6WufQrFcep-1)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## backend API
+[backend-flask]()
