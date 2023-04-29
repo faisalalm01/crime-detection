@@ -18,13 +18,14 @@ class SplashController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    print("pnReady");
     if (getStorage.read("status") != "" && getStorage.read("status") != null) {
       Future.delayed(Duration(seconds: 3), () {
         Get.offAllNamed(Routes.HOME);
       });
     } else {
-      Get.offAllNamed(Routes.LOGIN);
+      Future.delayed(Duration(seconds: 2),() {
+      Get.offAllNamed(Routes.AUTH);
+      });
     }
   }
 

@@ -23,7 +23,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.FPSWD;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -31,11 +31,11 @@ class AppPages {
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
-    GetPage(
-      name: _Paths.LOGIN,
-      page: () => const LoginView(),
-      binding: LoginBinding(),
-    ),
+    // GetPage(
+    //   name: _Paths.LOGIN,
+    //   page: () => const LoginView(),
+    //   binding: LoginBinding(),
+    // ),
     GetPage(
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
@@ -53,7 +53,7 @@ class AppPages {
     // ),
     GetPage(
       name: _Paths.AUTH,
-      page: () => const AuthView(),
+      page: () => AuthView(),
       binding: AuthBinding(),
     ),
     GetPage(

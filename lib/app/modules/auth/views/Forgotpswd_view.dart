@@ -14,6 +14,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(183, 183, 138, 1).withOpacity(0.3),
         title: Text("ForgotPassword"),
       ),
       body: GestureDetector(
@@ -21,6 +22,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
+          padding: EdgeInsets.only(top: 50, bottom: 50),
           decoration: BoxDecoration(
             color: Color.fromRGBO(101, 136, 100, 1),
             // gradient: LinearGradient(
@@ -35,7 +37,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 80),
                 child: TweenAnimationBuilder(
                   child: Container(
                     height: 200,
@@ -109,14 +111,27 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
               SizedBox(
-                child: Card(
+                // child: Card(
                   child: TweenAnimationBuilder(
                     child: Container(
                       margin: EdgeInsets.all(20),
                       height: 50,
                       width: 310,
-                      child: TextField(
-                        readOnly: true,
+                      child: 
+                      // TextField(
+                      //   controller: null,
+                      //   scrollPadding: EdgeInsets.symmetric(
+                      //       vertical: MediaQuery.of(context).viewInsets.bottom),
+                      //   decoration: InputDecoration(
+                      //     border: OutlineInputBorder(
+                      //       borderRadius: BorderRadius.circular(10),
+                      //     ),
+                      //     labelText: "Email",
+                      //     hintText: "Input your E-mail"
+                      //   ),
+                      // ),
+                      TextField(
+                        // readOnly: true,
                         showCursor: true,
                         cursorColor: Colors.white,
                         decoration: InputDecoration(
@@ -164,7 +179,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       );
                     },
                   ),
-                ),
+                // ),
                 height: 100,
                 width: 400,
               ),

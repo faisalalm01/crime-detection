@@ -2,10 +2,13 @@ import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   //TODO: Implement AuthController
+ 
+
 
   final count = 0.obs;
   @override
   void onInit() {
+    
     super.onInit();
   }
 
@@ -16,6 +19,7 @@ class AuthController extends GetxController {
 
   @override
   void onClose() {
+    
     super.onClose();
   }
 
