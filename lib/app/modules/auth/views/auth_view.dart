@@ -31,17 +31,11 @@ class _AuthViewState extends State<AuthView> {
               Expanded(
                 child: Container(
                   width: double.infinity,
-                  height: 250,
+                  height: double.infinity,
                   child: Padding(
-                    padding: EdgeInsets.only(top: 50, left: 10),
+                    padding: EdgeInsets.only(top: 50),
                     child: TweenAnimationBuilder(
-                      child: Text(
-                        "Selamat Datang",
-                        style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.white,
-                            fontFamily: "Raleway"),
-                      ),
+                     child: Image.asset("assets/images/auth.png", height: 20,),
                       tween: Tween<double>(begin: 0, end: 1),
                       duration: Duration(milliseconds: 500),
                       builder: (BuildContext context, double _value, child) {
@@ -69,15 +63,15 @@ class _AuthViewState extends State<AuthView> {
                           height: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40),
                             ),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
                                 offset: const Offset(2, 2),
-                                blurRadius: 35,
-                                color: Colors.black.withOpacity(0.01),
+                                blurRadius: 50,
+                                color: Colors.white.withOpacity(0.50),
                               ),
                             ],
                           ),
@@ -91,12 +85,12 @@ class _AuthViewState extends State<AuthView> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 15, top: 20),
+                                        left: 160, top: 50),
                                     child: Text(
                                       "Login",
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 22,
+                                        fontSize: 35,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -111,45 +105,8 @@ class _AuthViewState extends State<AuthView> {
                                 children: [
                                   Container(
                                     height: 50,
-                                    width: 310,
+                                    width: 350,
                                     child:
-                                        // TextField(
-                                        //   // readOnly: true,
-                                        //   showCursor: true,
-                                        //   cursorColor: Colors.black,
-                                        //   decoration: InputDecoration(
-                                        //     labelText: "Email",
-                                        //     hintText: "Username or E-mail",
-                                        //     hintStyle: TextStyle(
-                                        //         color: Colors.grey, fontSize: 15),
-                                        //     labelStyle: TextStyle(
-                                        //         color: Colors.black,
-                                        //         fontSize: 16,
-                                        //         fontWeight: FontWeight.w400),
-                                        //     prefixIcon: Icon(
-                                        //       Icons.perm_identity_sharp,
-                                        //       color: Colors.black,
-                                        //       size: 25,
-                                        //     ),
-                                        //     enabledBorder: OutlineInputBorder(
-                                        //         borderSide: BorderSide(
-                                        //             color: Colors.grey.shade200,
-                                        //             width: 2),
-                                        //         borderRadius:
-                                        //             BorderRadius.circular(10)),
-                                        //     floatingLabelStyle: TextStyle(
-                                        //       color: Colors.black,
-                                        //       fontSize: 18,
-                                        //     ),
-                                        //     focusedBorder: OutlineInputBorder(
-                                        //       borderSide: BorderSide(
-                                        //           color: Colors.deepPurpleAccent,
-                                        //           width: 1.5),
-                                        //       borderRadius:
-                                        //           BorderRadius.circular(10),
-                                        //     ),
-                                        //   ),
-                                        // ),
                                         TextField(
                                       // showCursor: true,
                                       cursorColor: Colors.black,
@@ -164,7 +121,7 @@ class _AuthViewState extends State<AuthView> {
                                             fontSize: 15),
                                         hintText: "Something@email.com",
                                         labelStyle: TextStyle(
-                                            color: Color.fromRGBO(183, 183, 138, 1),
+                                            color: Colors.black,
                                             fontSize: 16,
                                             fontWeight: FontWeight.w400),
                                         prefixIcon: Icon(
@@ -174,11 +131,10 @@ class _AuthViewState extends State<AuthView> {
                                         ),
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
-                                                color: Color.fromRGBO(
-                                                    183, 183, 138, 1),
+                                                color: Colors.grey.shade200,
                                                 width: 2),
                                             borderRadius:
-                                                BorderRadius.circular(10)),
+                                                BorderRadius.circular(20)),
                                         floatingLabelStyle: TextStyle(
                                           color: Color.fromRGBO(183, 183, 138, 1),
                                           fontSize: 18,
@@ -188,7 +144,7 @@ class _AuthViewState extends State<AuthView> {
                                               color: Color.fromRGBO(183, 183, 138, 1),
                                               width: 1.5),
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                              BorderRadius.circular(20),
                                         ),
                                       ),
                                     ),
@@ -200,9 +156,12 @@ class _AuthViewState extends State<AuthView> {
                               ),
                               Container(
                                 height: 50,
-                                width: 310,
+                                width: 350,
                                 child: TextField(
-                                  readOnly: true,
+                                  style: TextStyle(
+                                    color: Colors.black
+                                  ),
+                                  // readOnly: true,
                                   showCursor: true,
                                   cursorColor: Colors.black,
                                   decoration: InputDecoration(
@@ -224,16 +183,16 @@ class _AuthViewState extends State<AuthView> {
                                             color: Colors.grey.shade200,
                                             width: 2),
                                         borderRadius:
-                                            BorderRadius.circular(10)),
+                                            BorderRadius.circular(20)),
                                     floatingLabelStyle: TextStyle(
-                                      color: Colors.black,
+                                      color: Color.fromRGBO(183, 183, 138, 1),
                                       fontSize: 18,
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Colors.deepPurpleAccent,
+                                          color: Color.fromRGBO(183, 183, 138, 1),
                                           width: 1.5),
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
                                   ),
                                 ),
@@ -242,18 +201,18 @@ class _AuthViewState extends State<AuthView> {
                               Container(
                                 child: Row(
                                   children: [
-                                    Checkbox(
-                                      value: value,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          this.value = value!;
-                                        });
-                                      },
-                                      activeColor: Colors.deepPurple[900],
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                    ),
+                                    // Checkbox(
+                                    //   value: value,
+                                    //   onChanged: (value) {
+                                    //     setState(() {
+                                    //       this.value = value!;
+                                    //     });
+                                    //   },
+                                    //   activeColor: Colors.deepPurple[900],
+                                    //   shape: RoundedRectangleBorder(
+                                    //       borderRadius:
+                                    //           BorderRadius.circular(5)),
+                                    // ),
                                     // Text(
                                     //   "Remember Me",
                                     //   style: TextStyle(
@@ -261,10 +220,10 @@ class _AuthViewState extends State<AuthView> {
                                     //       fontSize: 16,
                                     //       fontWeight: FontWeight.w400),
                                     // ),
-                                    Expanded(child: Container()),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
+                                    // Expanded(child: Container()),
+                                    // Row(
+                                    //   mainAxisAlignment: MainAxisAlignment.end,
+                                    //   children: [
                                         TextButton(
                                           onPressed: () {
                                             Navigator.push(
@@ -274,7 +233,10 @@ class _AuthViewState extends State<AuthView> {
                                                       (ForgotPassword())),
                                             );
                                           },
-                                          child: Text(
+                                          child: Container(
+                                            margin: EdgeInsets.only(left: 20),
+                                            child: 
+                                          Text(
                                             "ForgotPassword?",
                                             style: TextStyle(
                                                 color: Colors.deepPurple[900],
@@ -282,8 +244,9 @@ class _AuthViewState extends State<AuthView> {
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                          )
+                                    //   ],
+                                    // ),
                                   ],
                                 ),
                               ),
@@ -293,21 +256,25 @@ class _AuthViewState extends State<AuthView> {
                               Container(
                                 child: MaterialButton(
                                   onPressed: () {},
-                                  height: 45,
+                                  minWidth: 350,
+                                  height: 55,
                                   padding: EdgeInsets.symmetric(
                                       vertical: 10, horizontal: 120),
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
-                                  color: Colors.deepPurpleAccent,
+                                  color: Color.fromRGBO(183, 183, 138, 1),
                                   child: Text(
                                     'Login',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      
+                                      ),
                                   ),
                                 ),
                               ),
                               Container(
-                                width: 270,
+                                width: 250,
                                 height: 45,
                                 child: TextButton(
                                   onPressed: () {
@@ -318,9 +285,9 @@ class _AuthViewState extends State<AuthView> {
                                     });
                                   },
                                   child: Text(
-                                    "Create account",
+                                    "Register",
                                     style: TextStyle(
-                                        color: Colors.deepPurple[900],
+                                        color: Color.fromRGBO(95, 125, 102, 1),
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600),
                                   ),

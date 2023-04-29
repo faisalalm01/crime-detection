@@ -22,7 +22,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-          padding: EdgeInsets.only(top: 50, bottom: 50),
+          padding: EdgeInsets.only(top: 30, bottom: 10),
           decoration: BoxDecoration(
             color: Color.fromRGBO(101, 136, 100, 1),
             // gradient: LinearGradient(
