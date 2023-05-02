@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, file_names, no_leading_underscores_for_local_identifiers, avoid_unnecessary_containers, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
 
@@ -112,73 +112,72 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               ),
               SizedBox(
                 // child: Card(
-                  child: TweenAnimationBuilder(
-                    child: Container(
-                      margin: EdgeInsets.all(20),
-                      height: 50,
-                      width: 310,
-                      child: 
-                      // TextField(
-                      //   controller: null,
-                      //   scrollPadding: EdgeInsets.symmetric(
-                      //       vertical: MediaQuery.of(context).viewInsets.bottom),
-                      //   decoration: InputDecoration(
-                      //     border: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(10),
-                      //     ),
-                      //     labelText: "Email",
-                      //     hintText: "Input your E-mail"
-                      //   ),
-                      // ),
-                      TextField(
-                        // readOnly: true,
-                        showCursor: true,
-                        cursorColor: Colors.white,
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          hintStyle: TextStyle(
-                              color: Colors.white.withOpacity(0.3),
-                              fontSize: 15),
-                          hintText: "Something@email.com",
-                          labelStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400),
-                          prefixIcon: Icon(
-                            Icons.email_outlined,
+                child: TweenAnimationBuilder(
+                  child: Container(
+                    margin: EdgeInsets.all(20),
+                    height: 50,
+                    width: 310,
+                    child:
+                        // TextField(
+                        //   controller: null,
+                        //   scrollPadding: EdgeInsets.symmetric(
+                        //       vertical: MediaQuery.of(context).viewInsets.bottom),
+                        //   decoration: InputDecoration(
+                        //     border: OutlineInputBorder(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //     ),
+                        //     labelText: "Email",
+                        //     hintText: "Input your E-mail"
+                        //   ),
+                        // ),
+                        TextField(
+                      // readOnly: true,
+                      showCursor: true,
+                      cursorColor: Colors.white,
+                      decoration: InputDecoration(
+                        labelText: "Email",
+                        hintStyle: TextStyle(
+                            color: Colors.white.withOpacity(0.3), fontSize: 15),
+                        hintText: "Something@email.com",
+                        labelStyle: TextStyle(
                             color: Colors.white,
-                            size: 20,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color.fromRGBO(183, 183, 138, 1),
-                                  width: 2),
-                              borderRadius: BorderRadius.circular(10)),
-                          floatingLabelStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white70, width: 1.5),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
+                        prefixIcon: Icon(
+                          Icons.email_outlined,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(183, 183, 138, 1),
+                                width: 2),
+                            borderRadius: BorderRadius.circular(10)),
+                        floatingLabelStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.white70, width: 1.5),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
-                    tween: Tween<double>(begin: 0, end: 1),
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.easeInSine,
-                    builder: (BuildContext context, double _value, child) {
-                      return Opacity(
-                        opacity: _value,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: _value * 5),
-                          child: child,
-                        ),
-                      );
-                    },
                   ),
+                  tween: Tween<double>(begin: 0, end: 1),
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInSine,
+                  builder: (BuildContext context, double _value, child) {
+                    return Opacity(
+                      opacity: _value,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: _value * 5),
+                        child: child,
+                      ),
+                    );
+                  },
+                ),
                 // ),
                 height: 100,
                 width: 400,

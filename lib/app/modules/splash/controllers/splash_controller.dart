@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unnecessary_overrides
 
 import 'package:capstone_s6/app/routes/app_pages.dart';
 import 'package:get/get.dart';
@@ -23,8 +23,8 @@ class SplashController extends GetxController {
         Get.offAllNamed(Routes.HOME);
       });
     } else {
-      Future.delayed(Duration(seconds: 2),() {
-      Get.offAllNamed(Routes.AUTH);
+      Future.delayed(Duration(seconds: 2), () {
+        Get.offAllNamed(Routes.AUTH);
       });
     }
   }

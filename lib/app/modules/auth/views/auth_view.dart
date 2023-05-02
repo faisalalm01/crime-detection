@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, library_private_types_in_public_api, avoid_unnecessary_containers, sized_box_for_whitespace, no_leading_underscores_for_local_identifiers
 
 import 'package:capstone_s6/app/modules/auth/views/Forgotpswd_view.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +35,10 @@ class _AuthViewState extends State<AuthView> {
                   child: Padding(
                     padding: EdgeInsets.only(top: 50),
                     child: TweenAnimationBuilder(
-                     child: Image.asset("assets/images/auth.png", height: 20,),
+                      child: Image.asset(
+                        "assets/images/auth.png",
+                        height: 20,
+                      ),
                       tween: Tween<double>(begin: 0, end: 1),
                       duration: Duration(milliseconds: 500),
                       builder: (BuildContext context, double _value, child) {
@@ -106,19 +109,14 @@ class _AuthViewState extends State<AuthView> {
                                   Container(
                                     height: 50,
                                     width: 350,
-                                    child:
-                                        TextField(
+                                    child: TextField(
                                       // showCursor: true,
                                       cursorColor: Colors.black,
-                                      style: TextStyle(
-                                        color: Colors.black
-                                      ),
+                                      style: TextStyle(color: Colors.black),
                                       decoration: InputDecoration(
                                         labelText: "Email",
                                         hintStyle: TextStyle(
-                                            color:
-                                                Colors.black,
-                                            fontSize: 15),
+                                            color: Colors.black, fontSize: 15),
                                         hintText: "Something@email.com",
                                         labelStyle: TextStyle(
                                             color: Colors.black,
@@ -126,7 +124,8 @@ class _AuthViewState extends State<AuthView> {
                                             fontWeight: FontWeight.w400),
                                         prefixIcon: Icon(
                                           Icons.email_outlined,
-                                          color: Color.fromRGBO(183, 183, 138, 1),
+                                          color:
+                                              Color.fromRGBO(183, 183, 138, 1),
                                           size: 20,
                                         ),
                                         enabledBorder: OutlineInputBorder(
@@ -136,12 +135,14 @@ class _AuthViewState extends State<AuthView> {
                                             borderRadius:
                                                 BorderRadius.circular(20)),
                                         floatingLabelStyle: TextStyle(
-                                          color: Color.fromRGBO(183, 183, 138, 1),
+                                          color:
+                                              Color.fromRGBO(183, 183, 138, 1),
                                           fontSize: 18,
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                              color: Color.fromRGBO(183, 183, 138, 1),
+                                              color: Color.fromRGBO(
+                                                  183, 183, 138, 1),
                                               width: 1.5),
                                           borderRadius:
                                               BorderRadius.circular(20),
@@ -158,9 +159,7 @@ class _AuthViewState extends State<AuthView> {
                                 height: 50,
                                 width: 350,
                                 child: TextField(
-                                  style: TextStyle(
-                                    color: Colors.black
-                                  ),
+                                  style: TextStyle(color: Colors.black),
                                   // readOnly: true,
                                   showCursor: true,
                                   cursorColor: Colors.black,
@@ -190,7 +189,8 @@ class _AuthViewState extends State<AuthView> {
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Color.fromRGBO(183, 183, 138, 1),
+                                          color:
+                                              Color.fromRGBO(183, 183, 138, 1),
                                           width: 1.5),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
@@ -224,27 +224,26 @@ class _AuthViewState extends State<AuthView> {
                                     // Row(
                                     //   mainAxisAlignment: MainAxisAlignment.end,
                                     //   children: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      (ForgotPassword())),
-                                            );
-                                          },
-                                          child: Container(
-                                            margin: EdgeInsets.only(left: 20),
-                                            child: 
-                                          Text(
-                                            "ForgotPassword?",
-                                            style: TextStyle(
-                                                color: Colors.deepPurple[900],
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w400),
-                                          ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  (ForgotPassword())),
+                                        );
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(left: 20),
+                                        child: Text(
+                                          "ForgotPassword?",
+                                          style: TextStyle(
+                                              color: Colors.deepPurple[900],
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
                                         ),
-                                          )
+                                      ),
+                                    )
                                     //   ],
                                     // ),
                                   ],
@@ -268,8 +267,7 @@ class _AuthViewState extends State<AuthView> {
                                     'Login',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      
-                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
