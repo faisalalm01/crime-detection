@@ -1,15 +1,13 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
+// ignore_for_file: avoid_unnecessary_containers, sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+import 'package:get/get.dart';
 
-  @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
-}
+import '../controllers/forgotpswd_controller.dart';
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class ForgotpswdView extends GetView<ForgotpswdController> {
+  const ForgotpswdView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

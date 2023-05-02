@@ -7,9 +7,9 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const VERIFY = _Paths.VERIFY;
   static const AUTH = _Paths.AUTH;
-  static const FPSWD = _Paths.FPSWD;
   // static const LOGIN = _Paths.LOGIN;
   // static const REGISTER = _Paths.REGISTER;
+  static const FORGOTPSWD = _Paths.FORGOTPSWD;
 }
 
 abstract class _Paths {
@@ -18,7 +18,7 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const VERIFY = '/verif';
   static const AUTH = '/auth';
-  static const FPSWD = '/forgotpassword';
   // static const LOGIN = '/login';
   // static const REGISTER = '/register';
+  static const FORGOTPSWD = '/forgotpassword';
 }

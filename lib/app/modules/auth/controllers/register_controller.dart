@@ -1,11 +1,8 @@
 import 'package:get/get.dart';
 
-class AuthController extends GetxController {
-  //TODO: Implement AuthController
-  
-  bool playAreas = false;
-  bool value = false;
- 
+class RegisterController extends GetxController {
+  //TODO: Implement HomeController
+
   final count = 0.obs;
   @override
   void onInit() {
@@ -19,7 +16,6 @@ class AuthController extends GetxController {
 
   @override
   void onClose() {
-    
     super.onClose();
   }
 
