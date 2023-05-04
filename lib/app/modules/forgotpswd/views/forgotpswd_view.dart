@@ -1,20 +1,18 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, file_names, no_leading_underscores_for_local_identifiers, avoid_unnecessary_containers, library_private_types_in_public_api
+// ignore_for_file: avoid_unnecessary_containers, sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+import 'package:get/get.dart';
 
-  @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
-}
+import '../controllers/forgotpswd_controller.dart';
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class ForgotpswdView extends GetView<ForgotpswdController> {
+  const ForgotpswdView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        
         backgroundColor: Color.fromRGBO(183, 183, 138, 1).withOpacity(0.3),
         title: Text("ForgotPassword"),
       ),
@@ -23,7 +21,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-          padding: EdgeInsets.only(top: 30, bottom: 10),
+          padding: EdgeInsets.only(top: 20, bottom: 10),
           decoration: BoxDecoration(
             color: Color.fromRGBO(101, 136, 100, 1),
           ),
