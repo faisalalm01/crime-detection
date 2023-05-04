@@ -14,6 +14,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
         backgroundColor: Color.fromRGBO(183, 183, 138, 1).withOpacity(0.3),
         title: Text("ForgotPassword"),
       ),
@@ -25,14 +26,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           padding: EdgeInsets.only(top: 30, bottom: 10),
           decoration: BoxDecoration(
             color: Color.fromRGBO(101, 136, 100, 1),
-            // gradient: LinearGradient(
-            //   begin: Alignment.topRight,
-            //   end: Alignment.bottomLeft,
-            //   // colors: [
-            //   //   Colors.deepPurpleAccent,
-            //   //   Color(0xff4a148c),
-            //   // ],
-            // ),
           ),
           child: Column(
             children: [
