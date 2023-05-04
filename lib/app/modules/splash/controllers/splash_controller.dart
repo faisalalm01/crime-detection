@@ -23,8 +23,8 @@ class SplashController extends GetxController {
         Get.offAllNamed(Routes.HOME);
       });
     } else {
-      Future.delayed(Duration(seconds: 2),() {
-      Get.offAllNamed(Routes.AUTH);
+      Future.delayed(Duration(seconds: 2), () {
+        Get.offAllNamed(Routes.AUTH);
       });
     }
   }

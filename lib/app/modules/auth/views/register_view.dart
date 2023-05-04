@@ -68,7 +68,7 @@ class RegisterView extends GetView<RegisterController> {
             ),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -109,45 +109,6 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
           ],
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          height: 50,
-          width: 350,
-          child: TextField(
-            style: TextStyle(color: Colors.black),
-            // readOnly: true,
-            showCursor: true,
-            cursorColor: Colors.black,
-            decoration: InputDecoration(
-              labelText: "Alamat",
-              hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
-              hintText: "your place",
-              labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400),
-              prefixIcon: Icon(
-                Icons.vpn_key_outlined,
-                color: Colors.black,
-                size: 20,
-              ),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
-                  borderRadius: BorderRadius.circular(20)),
-              floatingLabelStyle: TextStyle(
-                color: Color.fromRGBO(183, 183, 138, 1),
-                fontSize: 18,
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                    color: Color.fromRGBO(183, 183, 138, 1), width: 1.5),
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
         ),
         SizedBox(
           height: 10,
