@@ -83,9 +83,7 @@ class _AuthViewState extends State<AuthView> {
                           // ******************************Login*************************************
                           child: Column(
                             children: [
-                              Container(
-                                child: LoginView()
-                              ),
+                              Container(child: LoginView()),
                               Container(
                                 width: 350,
                                 height: 45,

@@ -18,7 +18,7 @@ class SplashController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    if (getStorage.read("status") != "" && getStorage.read("status") != null) {
+    if (getStorage.read("token") != "" && getStorage.read("status") != null) {
       Future.delayed(Duration(seconds: 3), () {
         Get.offAllNamed(Routes.HOME);
       });

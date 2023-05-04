@@ -79,7 +79,7 @@ class LoginView extends GetView<LoginController> {
                 width: 350,
                 child: TextField(
                   style: TextStyle(color: Colors.black),
-                  // readOnly: true,
+                  // readOnly: true, 
                   showCursor: true,
                   cursorColor: Colors.black,
                   obscureText: true,
