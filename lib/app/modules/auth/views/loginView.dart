@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:capstone_s6/app/modules/forgotpswd/views/forgotpswd_view.dart';
+import 'package:capstone_s6/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,11 +9,11 @@ import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  // const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
 
-  // final controller = Get.put(LoginController());
-  // final TextEditingController emailController = TextEditingController(text: "");
-  // final TextEditingController passwordController = TextEditingController(text: "");
+  final controller = Get.put(LoginController());
+  final TextEditingController emailController = TextEditingController(text: "");
+  final TextEditingController passwordController = TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class LoginView extends GetView<LoginController> {
               height: 50,
               width: 350,
               child: TextField(
-                controller: LoginController().emailController,
+                controller: emailController,
                 // showCursor: true,
                 cursorColor: Colors.black,
                 style: TextStyle(color: Colors.black),
@@ -84,7 +85,7 @@ class LoginView extends GetView<LoginController> {
               height: 50,
               width: 350,
               child: TextField(
-                controller: LoginController().passwordController,
+                controller: passwordController,
                 style: TextStyle(color: Colors.black),
                 // readOnly: true,
                 showCursor: true,
@@ -151,23 +152,40 @@ class LoginView extends GetView<LoginController> {
               height: 20,
             ),
             Container(
-              child: MaterialButton(
-                onPressed: () => {
-                  LoginController().submitLogin()
-                },
-                minWidth: 350,
-                height: MediaQuery.of(context).size.height / 20,
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
-                shape: RoundedRectangleBorder(
+              padding: EdgeInsets.only(left: 50, right: 50),
+              height: 40,
+              child: InkWell(
+                onTap: submitLogin,
+                child: Material(
                   borderRadius: BorderRadius.circular(20),
-                ),
-                color: Color.fromRGBO(183, 183, 138, 1),
-                child: Text(
-                  'Login',
+                  child: Center(
+                    child: Text(
+                       'Login',
                   style: TextStyle(
                     color: Colors.white,
+                    ),
                   ),
                 ),
+                )
+                // onPressed: submitLogin,
+                // () => {
+                //   Navigator.push(context,
+                //   MaterialPageRoute(builder: (context) => (HomeView()))
+                //   )
+                // },
+                // minWidth: 350,
+                // height: MediaQuery.of(context).size.height / 20,
+                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(20),
+                // ),
+                // color: Color.fromRGBO(183, 183, 138, 1),
+                // child: Text(
+                //   'Login',
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //   ),
+                // ),
               ),
             ),
           ],
@@ -176,5 +194,9 @@ class LoginView extends GetView<LoginController> {
     );
   }
 
+ submitLogin() {
+  controller.kliklogin(emailController.text, passwordController.text);
+    // LoginController.kl(emailController.text, passwordController.text);
+  }
 
 }

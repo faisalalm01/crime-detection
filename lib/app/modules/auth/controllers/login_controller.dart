@@ -11,8 +11,8 @@ import '../../../data/models/user_model.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement HomeController
-  TextEditingController emailController = TextEditingController(text: '');
-  TextEditingController passwordController = TextEditingController(text: '');
+  // TextEditingController emailController = TextEditingController(text: '');
+  // TextEditingController passwordController = TextEditingController(text: '');
   final getStorage = GetStorage();
   late User user;
 
@@ -62,9 +62,9 @@ class LoginController extends GetxController {
     // });
   }
 
-  submitLogin() {
-    kliklogin(emailController.text, passwordController.text);
-  }
+  // submitLogin() {
+  //   kliklogin(emailController.text, passwordController.text);
+  // }
 
   @override
   void onClose() {

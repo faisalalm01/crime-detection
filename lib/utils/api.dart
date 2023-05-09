@@ -1,5 +1,5 @@
 class API {
-  static String baseUrl = 'https://192.168.174.11:5000/';
+  static String baseUrl = 'https://localhost:5000/';
 
 }
 // class _AuthEndPoints {

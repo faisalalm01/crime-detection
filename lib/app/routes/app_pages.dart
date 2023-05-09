@@ -1,3 +1,4 @@
+import 'package:capstone_s6/app/modules/home/views/LandingPage.dart';
 import 'package:get/get.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
@@ -21,7 +22,12 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.LPAGE,
+      page: () => LandingPage(),
       binding: HomeBinding(),
     ),
     GetPage(
