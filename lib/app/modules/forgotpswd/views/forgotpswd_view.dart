@@ -103,73 +103,73 @@ class ForgotpswdView extends GetView<ForgotpswdController> {
               ),
               SizedBox(
                 // child: Card(
-                  child: TweenAnimationBuilder(
-                    child: Container(
-                      margin: EdgeInsets.all(20),
-                      height: 50,
-                      width: 310,
-                      child: 
-                      // TextField(
-                      //   controller: null,
-                      //   scrollPadding: EdgeInsets.symmetric(
-                      //       vertical: MediaQuery.of(context).viewInsets.bottom),
-                      //   decoration: InputDecoration(
-                      //     border: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(10),
-                      //     ),
-                      //     labelText: "Email",
-                      //     hintText: "Input your E-mail"
-                      //   ),
-                      // ),
-                      TextField(
-                        // readOnly: true,
-                        showCursor: true,
-                        cursorColor: Colors.white,
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          hintStyle: TextStyle(
-                              color: Colors.white.withOpacity(0.3),
-                              fontSize: 15),
-                          hintText: "Something@email.com",
-                          labelStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400),
-                          prefixIcon: Icon(
-                            Icons.email_outlined,
+                child: TweenAnimationBuilder(
+                  child: Container(
+                    margin: EdgeInsets.all(20),
+                    height: 50,
+                    width: 310,
+                    child:
+                        // TextField(
+                        //   controller: null,
+                        //   scrollPadding: EdgeInsets.symmetric(
+                        //       vertical: MediaQuery.of(context).viewInsets.bottom),
+                        //   decoration: InputDecoration(
+                        //     border: OutlineInputBorder(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //     ),
+                        //     labelText: "Email",
+                        //     hintText: "Input your E-mail"
+                        //   ),
+                        // ),
+                        TextField(
+                      // readOnly: true,
+                      controller: ForgotpswdController().emailController,
+                      showCursor: true,
+                      cursorColor: Colors.white,
+                      decoration: InputDecoration(
+                        labelText: "Email",
+                        hintStyle: TextStyle(
+                            color: Colors.white.withOpacity(0.3), fontSize: 15),
+                        hintText: "Something@email.com",
+                        labelStyle: TextStyle(
                             color: Colors.white,
-                            size: 20,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color.fromRGBO(183, 183, 138, 1),
-                                  width: 2),
-                              borderRadius: BorderRadius.circular(10)),
-                          floatingLabelStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white70, width: 1.5),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
+                        prefixIcon: Icon(
+                          Icons.email_outlined,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(183, 183, 138, 1),
+                                width: 2),
+                            borderRadius: BorderRadius.circular(10)),
+                        floatingLabelStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.white70, width: 1.5),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
-                    tween: Tween<double>(begin: 0, end: 1),
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.easeInSine,
-                    builder: (BuildContext context, double _value, child) {
-                      return Opacity(
-                        opacity: _value,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: _value * 5),
-                          child: child,
-                        ),
-                      );
-                    },
                   ),
+                  tween: Tween<double>(begin: 0, end: 1),
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInSine,
+                  builder: (BuildContext context, double _value, child) {
+                    return Opacity(
+                      opacity: _value,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: _value * 5),
+                        child: child,
+                      ),
+                    );
+                  },
+                ),
                 // ),
                 height: 100,
                 width: 400,
@@ -180,26 +180,7 @@ class ForgotpswdView extends GetView<ForgotpswdController> {
               TweenAnimationBuilder(
                 child: Container(
                   child: MaterialButton(
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (contex) => AlertDialog(
-                          contentPadding:
-                              const EdgeInsets.only(left: 25, top: 10),
-                          buttonPadding: const EdgeInsets.only(bottom: 25),
-                          title: Text("Email Verification"),
-                          content: Text(
-                              "Please verify the email adress for something@email.com"),
-                          actions: [
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text("Verify"))
-                          ],
-                        ),
-                      );
-                    },
+                    onPressed: () => {ForgotpswdController().submit()},
                     height: 45,
                     padding:
                         EdgeInsets.symmetric(vertical: 10, horizontal: 110),
