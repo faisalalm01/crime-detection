@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:capstone_s6/app/modules/forgotpswd/views/forgotpswd_view.dart';
+import 'package:capstone_s6/app/modules/home/views/LandingPage.dart';
 import 'package:capstone_s6/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -152,42 +153,26 @@ class LoginView extends GetView<LoginController> {
               height: 20,
             ),
             Container(
-              padding: EdgeInsets.only(left: 50, right: 50),
-              height: 40,
-              child: InkWell(
-                onTap: submitLogin,
-                child: Material(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Center(
-                    child: Text(
-                       'Login',
-                  style: TextStyle(
-                    color: Colors.white,
-                    ),
-                  ),
-                ),
-                )
-                // onPressed: submitLogin,
-                // () => {
-                //   Navigator.push(context,
-                //   MaterialPageRoute(builder: (context) => (HomeView()))
-                //   )
-                // },
-                // minWidth: 350,
-                // height: MediaQuery.of(context).size.height / 20,
-                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
-                // shape: RoundedRectangleBorder(
-                //   borderRadius: BorderRadius.circular(20),
-                // ),
-                // color: Color.fromRGBO(183, 183, 138, 1),
-                // child: Text(
-                //   'Login',
-                //   style: TextStyle(
-                //     color: Colors.white,
-                //   ),
-                // ),
-              ),
+          child: MaterialButton(
+            minWidth: 350,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => (LandingPage())),
+              );
+            },
+            height: MediaQuery.of(context).size.height / 20,
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
             ),
+            color: Color.fromRGBO(183, 183, 138, 1),
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
           ],
         ),
       ],
