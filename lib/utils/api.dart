@@ -1,6 +1,6 @@
 class API {
-  static String baseUrl = 'https://localhost:5000/';
 
+  static String baseUrl = 'https://192.168.8.101:5000/';
 }
 // class _AuthEndPoints {
 //   final String registerAccount = '/register';
