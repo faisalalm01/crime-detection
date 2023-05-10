@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class LandingPage extends StatelessWidget {
   final TextStyle unselectedLabelStyle = TextStyle(
-      color: Colors.white.withOpacity(0.5),
+      color: Colors.black,
       fontWeight: FontWeight.w500,
       fontSize: 12);
 
@@ -17,15 +17,15 @@ class LandingPage extends StatelessWidget {
     return Obx(() => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
         child: SizedBox(
-          height: 54,
+          height: 80,
           child: BottomNavigationBar(
             showUnselectedLabels: true,
             showSelectedLabels: true,
             onTap: landingPageController.changeTabIndex,
             currentIndex: landingPageController.tabIndex.value,
-            backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-            unselectedItemColor: Colors.white.withOpacity(0.5),
-            selectedItemColor: Colors.white,
+            backgroundColor: Colors.white,
+            unselectedItemColor: Color.fromRGBO(187, 195, 206, 1),
+            selectedItemColor: Color.fromRGBO(69, 82, 203, 1),
             unselectedLabelStyle: unselectedLabelStyle,
             selectedLabelStyle: selectedLabelStyle,
             items: [
@@ -35,44 +35,43 @@ class LandingPage extends StatelessWidget {
                   child: Icon(
                     Icons.home,
                     size: 20.0,
-                  ),
-                ),
+                  ),                ),
                 label: 'Home',
+                backgroundColor: Colors.black,
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                  margin: EdgeInsets.only(bottom: 7),
+                  child: Icon(
+                    Icons.history,
+                    size: 20.0,
+                  ),
+                ),
+                label: 'History',
                 backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
               ),
               BottomNavigationBarItem(
                 icon: Container(
                   margin: EdgeInsets.only(bottom: 7),
                   child: Icon(
-                    Icons.search,
+                    Icons.person,
                     size: 20.0,
                   ),
                 ),
-                label: 'Explore',
+                label: 'Profile',
                 backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
               ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(bottom: 7),
-                  child: Icon(
-                    Icons.location_history,
-                    size: 20.0,
-                  ),
-                ),
-                label: 'Places',
-                backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(bottom: 7),
-                  child: Icon(
-                    Icons.settings,
-                    size: 20.0,
-                  ),
-                ),
-                label: 'Settings',
-                backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Container(
+              //     margin: EdgeInsets.only(bottom: 7),
+              //     child: Icon(
+              //       Icons.settings,
+              //       size: 20.0,
+              //     ),
+              //   ),
+              //   label: 'Settings',
+              //   backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
+              // ),
             ],
           ),
         )));
