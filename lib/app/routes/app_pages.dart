@@ -1,12 +1,12 @@
-import 'package:capstone_s6/app/modules/home/views/LandingPage.dart';
 import 'package:get/get.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/auth/views/auth_view.dart';
 import '../modules/forgotpswd/bindings/forgotpswd_binding.dart';
 import '../modules/forgotpswd/views/forgotpswd_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
+import '../modules/landingpage/bindings/home_binding.dart';
+import '../modules/landingpage/views/LandingPage.dart';
+import '../modules/landingpage/views/home_view.dart';
 import '../modules/otp/bindings/otp_binding.dart';
 import '../modules/otp/views/otp_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -35,10 +35,7 @@ class AppPages {
       page: () => const SplashView(),
       binding: SplashBinding(),
     ),
-    GetPage(
-      name: _Paths.AUTH, 
-      page: () => AuthView(), 
-      binding: AuthBinding()),
+    GetPage(name: _Paths.AUTH, page: () => AuthView(), binding: AuthBinding()),
     GetPage(
       name: _Paths.FORGOTPSWD,
       page: () => const ForgotpswdView(),

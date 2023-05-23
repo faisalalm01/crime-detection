@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:capstone_s6/app/modules/forgotpswd/views/forgotpswd_view.dart';
-import 'package:capstone_s6/app/modules/home/views/LandingPage.dart';
-import 'package:capstone_s6/app/modules/home/views/home_view.dart';
+import 'package:capstone_s6/app/modules/landingpage/views/LandingPage.dart';
+import 'package:capstone_s6/app/modules/landingpage/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
