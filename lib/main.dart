@@ -9,7 +9,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Application",
+      title: "crime detection",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: ThemeData.dark(),

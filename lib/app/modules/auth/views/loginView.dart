@@ -152,36 +152,68 @@ class LoginView extends GetView<LoginController> {
             SizedBox(
               height: 20,
             ),
-            Container(
-          child: MaterialButton(
-            minWidth: 350,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => (LandingPage())),
-              );
-            },
-            height: MediaQuery.of(context).size.height / 20,
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            color: Color.fromRGBO(183, 183, 138, 1),
-            child: Text(
-              'Login',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ),
+            // Container(
+          // child: MaterialButton(
+          //   minWidth: 350,
+          //   onPressed: () {
+          //     // submitLogin();
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => (LandingPage())),
+          //     );
+
+          //   },
+          //   height: MediaQuery.of(context).size.height / 20,
+          //   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
+          //   shape: RoundedRectangleBorder(
+          //     borderRadius: BorderRadius.circular(20),
+          //   ),
+          //   color: Color.fromRGBO(183, 183, 138, 1),
+          //   child: Text(
+          //     'Login',
+          //     style: TextStyle(color: Colors.white),
+          //   ),
+          // ),
+        // ),
+        SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+                width: 350,
+                child: GetBuilder<LoginController>(
+                  init: LoginController(),
+                  builder: (controller) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(context, 
+                          MaterialPageRoute(builder: (context) => (LandingPage()))
+                        );
+                        // var loginController = Get.find<LoginController>();
+
+                        // var email = emailController.text;
+                        // var password = passwordController.text;
+
+                        // loginController.klikLogin(email, password);
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor:  Color.fromRGBO(183, 183, 138, 1),
+                          elevation: 5,
+                          shape: new RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.all(20)),
+                      child: Text("LOGIN"),
+                    );
+                  },
+                )
+                ),
           ],
         ),
       ],
     );
   }
 
- submitLogin() {
-  controller.kliklogin(emailController.text, passwordController.text);
-    // LoginController.kl(emailController.text, passwordController.text);
-  }
+//  submitLogin() {
+//   controller.kliklogin(emailController.text, passwordController.text);
+//     // LoginController.kl(emailController.text, passwordController.text);
+//   }
 
 }

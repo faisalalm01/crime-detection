@@ -1,3 +1,5 @@
+import 'package:capstone_s6/app/modules/landingpage/views/history_view.dart';
+import 'package:capstone_s6/app/modules/landingpage/views/profile_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
@@ -26,6 +28,14 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
+      name: _Paths.HISTORY,
+      page: () => const HistoryView(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+    ),
+    GetPage(
       name: _Paths.LPAGE,
       page: () => LandingPage(),
       binding: HomeBinding(),
@@ -35,7 +45,11 @@ class AppPages {
       page: () => const SplashView(),
       binding: SplashBinding(),
     ),
-    GetPage(name: _Paths.AUTH, page: () => AuthView(), binding: AuthBinding()),
+    GetPage(
+      name: _Paths.AUTH, 
+      page: () => const AuthView(), 
+      binding: AuthBinding()
+    ),
     GetPage(
       name: _Paths.FORGOTPSWD,
       page: () => const ForgotpswdView(),
