@@ -56,7 +56,7 @@ class HomeView extends GetView<HomeController> {
                           fontSize: 17.0,
                           fontWeight: FontWeight.bold),
                     ),
-                    minWidth: 150,
+                    minWidth: 50,
                     height: MediaQuery.of(context).size.height / 20,
                     padding:
                         EdgeInsets.symmetric(vertical: 10, horizontal: 120),

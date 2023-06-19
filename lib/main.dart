@@ -1,5 +1,6 @@
 import 'package:capstone_s6/app/modules/splash/bindings/splash_binding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:get/get.dart';
 

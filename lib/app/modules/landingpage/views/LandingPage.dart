@@ -3,7 +3,7 @@
 import 'package:capstone_s6/app/modules/landingpage/controllers/landingPageController.dart';
 import 'package:capstone_s6/app/modules/landingpage/views/history_view.dart';
 import 'package:capstone_s6/app/modules/landingpage/views/home_view.dart';
-import 'package:capstone_s6/app/modules/landingpage/views/profile_view.dart';
+import 'package:capstone_s6/app/modules/landingpage/views/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
