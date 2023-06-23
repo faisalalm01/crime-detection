@@ -10,11 +10,12 @@ import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  LoginView({Key? key}) : super(key: key);
-
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  LoginView({Key? key}) : super(key: key) {
   final controller = Get.put(LoginController());
-  final TextEditingController emailController = TextEditingController(text: "");
-  final TextEditingController passwordController = TextEditingController(text: "");
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -183,15 +184,15 @@ class LoginView extends GetView<LoginController> {
                   builder: (controller) {
                     return ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, 
-                          MaterialPageRoute(builder: (context) => (LandingPage()))
-                        );
-                        // var loginController = Get.find<LoginController>();
+                        // Navigator.push(context, 
+                        //   MaterialPageRoute(builder: (context) => (LandingPage()))
+                        // );
+                        var loginController = Get.find<LoginController>();
 
-                        // var email = emailController.text;
-                        // var password = passwordController.text;
+                        var email = emailController.text;
+                        var password = passwordController.text;
 
-                        // loginController.klikLogin(email, password);
+                        loginController.klikLogin(email, password);
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:  Color.fromRGBO(183, 183, 138, 1),

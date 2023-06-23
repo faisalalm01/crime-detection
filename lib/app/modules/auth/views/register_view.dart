@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, non_constant_identifier_names, unnecessary_new
 
 import 'package:capstone_s6/app/modules/otp/views/otp_view.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,15 @@ import 'package:get/get.dart';
 import '../controllers/register_controller.dart';
 
 class RegisterView extends GetView<RegisterController> {
-  const RegisterView({Key? key}) : super(key: key);
+  final TextEditingController fullnameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController rePasswordController = TextEditingController();
+  
+  RegisterView({Key? key}) : super(key: key){
+    final controller = Get.put(RegisterController());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,6 +44,7 @@ class RegisterView extends GetView<RegisterController> {
           height: 50,
           width: 350,
           child: TextField(
+            controller: fullnameController,
             style: TextStyle(color: Colors.black),
             // readOnly: true,
             showCursor: true,
@@ -76,6 +85,7 @@ class RegisterView extends GetView<RegisterController> {
               height: 50,
               width: 350,
               child: TextField(
+                controller: emailController,
                 // showCursor: true,
                 cursorColor: Colors.black,
                 style: TextStyle(color: Colors.black),
@@ -117,10 +127,12 @@ class RegisterView extends GetView<RegisterController> {
           height: 50,
           width: 350,
           child: TextField(
+            controller: passwordController,
             style: TextStyle(color: Colors.black),
             // readOnly: true,
             showCursor: true,
             cursorColor: Colors.black,
+              obscureText:true,
             decoration: InputDecoration(
               labelText: "Password",
               hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
@@ -156,7 +168,9 @@ class RegisterView extends GetView<RegisterController> {
           height: 50,
           width: 350,
           child: TextField(
+            controller: rePasswordController,
             style: TextStyle(color: Colors.black),
+            obscureText: true,
             // readOnly: true,
             showCursor: true,
             cursorColor: Colors.black,
@@ -188,28 +202,60 @@ class RegisterView extends GetView<RegisterController> {
             ),
           ),
         ),
-        SizedBox(height: 20),
-        Container(
-          child: MaterialButton(
-            minWidth: 350,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => (OtpView())),
-              );
-            },
-            height: MediaQuery.of(context).size.height / 20,
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            color: Color.fromRGBO(183, 183, 138, 1),
-            child: Text(
-              'Register',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ),
+        // SizedBox(height: 20),
+        // Container(
+        //   child: MaterialButton(
+        //     minWidth: 350,
+        //     onPressed: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(builder: (context) => (OtpView())),
+        //       );
+        //     },
+        //     height: MediaQuery.of(context).size.height / 20,
+        //     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
+        //     shape: RoundedRectangleBorder(
+        //       borderRadius: BorderRadius.circular(20),
+        //     ),
+        //     color: Color.fromRGBO(183, 183, 138, 1),
+        //     child: Text(
+        //       'Register',
+        //       style: TextStyle(color: Colors.white),
+        //     ),
+        //   ),
+        // ),
+         SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+                width: 350,
+                child: GetBuilder<RegisterController>(
+                  init: RegisterController(),
+                  builder: (controller) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        // Navigator.push(context, 
+                        //   MaterialPageRoute(builder: (context) => (LandingPage()))
+                        // );
+                        var registerController = Get.find<RegisterController>();
+
+                        var fullname = fullnameController.text;
+                        var email = emailController.text;
+                        var password = passwordController.text;
+                        var confirm_password = rePasswordController.text;
+
+                        registerController.KlikRegister(fullname, email, password, confirm_password);
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor:  Color.fromRGBO(183, 183, 138, 1),
+                          elevation: 5,
+                          shape: new RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.all(20)),
+                      child: Text("Register"),
+                    );
+                  },
+                )
+                ),
       ],
     );
   }

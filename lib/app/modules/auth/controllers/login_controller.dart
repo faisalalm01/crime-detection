@@ -26,7 +26,7 @@ class LoginController extends GetxController {
   //   var body = {
   //     'email': email, 'password': password
   //   };
-  //   var url = Uri.parse(API.baseUrl + API.authEndPoints.loginAccount);
+  //   var url = Uri.http(API.baseUrl + API.authEndPoints.loginAccount);
   //   // var input = jsonEncode({
   //   //   "email" : email,
   //   //   "password" : password
@@ -41,10 +41,10 @@ class LoginController extends GetxController {
   //       var rs = json.decode(res.body);
   //       if(rs['code'] == 200) {
   //         print("login success");
-  //         // getStorage.write("status", "login");
-  //         // user = User.fromJson(rs['data']);
-  //         // getStorage.write('user', user.toJson());
-  //         Get.offAllNamed(Routes.HOME);
+  //         getStorage.write("status", "login");
+  //         user = User.fromJson(rs['data']);
+  //         getStorage.write('user', user.toJson());
+  //         Get.offAllNamed(Routes.LPAGE);
   //       }else {
   //         // print(rs['code']);
   //         print("ndda berhasil login");
@@ -55,10 +55,10 @@ class LoginController extends GetxController {
   //   }).catchError((err) {
   //     print(err);
   //   });
-  //   // getStorage.write('status', 'login');
-  //   // Future.delayed(Duration(seconds: 2),() {
-  //   //   Get.offAllNamed(Routes.HOME);
-  //   // });
+    // getStorage.write('status', 'login');
+    // Future.delayed(Duration(seconds: 2),() {
+    //   Get.offAllNamed(Routes.HOME);
+    // });
   // }
 
   // submitLogin() {
@@ -86,11 +86,12 @@ class LoginController extends GetxController {
       await prefs.setString('token', token);
       print(prefs);
 
+      getStorage.write('token', "login");
       await showPlatformDialog(
         context: Get.overlayContext!,
         builder: (_) => BasicDialogAlert(
           title: Text("Login Berhasil"),
-          content: Text("Silikan Klik OK untuk menuju ke halaman Dashboard"),
+          content: Text("Selamat Datang"),
           actions: <Widget>[
             BasicDialogAction(
               title: Text("OK"),
@@ -104,9 +105,26 @@ class LoginController extends GetxController {
         ),
       );
     } else if (response.statusCode == 400) {
+      //   await showPlatformDialog(
+      //   context: Get.overlayContext!,
+      //   builder: (_) => BasicDialogAlert(
+      //     title: Text("Login Gagal"),
+      //     actions: <Widget>[
+      //       BasicDialogAction(
+      //         title: Text("OK"),
+      //         onPressed: () {
+      //           // Menutup AlertDialog dan pindah ke halaman OTP
+      //           Get.back(); // Menutup AlertDialog
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // );
       print("Terjadi kesalahan: ${response.body}");
+      Get.back();
+      // Get.offAllNamed(Routes.AUTH);
     } else {
-      print("terjadi kesalahan saat melakukan login");
+      print("terjadi kesalahan: ${response.body}");
     }
   }
 
