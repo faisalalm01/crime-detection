@@ -57,7 +57,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.OTP,
-      page: () => const OtpView(),
+      page: () => OtpView(),
       binding: OtpBinding(),
     ),
   ];

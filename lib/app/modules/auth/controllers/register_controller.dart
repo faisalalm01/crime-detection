@@ -20,34 +20,33 @@ class RegisterController extends GetxController {
   TextEditingController passwordController = TextEditingController();
   TextEditingController rePasswordController = TextEditingController();
 
-  void KlikRegister(String fullname, String email, String password, String confirm_password ) async {
+  void KlikRegister(String fullname, String email, String password, String confirm_password) async {
 
     // String email = "fahmi@gmail.com";
     // String password = "fahmi123";
 
-    var body = {'fullname': fullname ,'email': email, 'password': password, 'confirm_password': confirm_password};
-    print(body);
-    // print(password);
+    var body = {'fullname': fullname, 'email': email, 'password': password, 'confirm_password': confirm_password};
+    print(fullname);
+    print(email);
     var response = await http.post(Uri.parse(API.baseUrl + API.authEndPoints.registerAccount),
-        // headers: {"Content-Type": "application/json"}, 
+        headers: {"Content-Type": "application/json"}, 
         body: json.encode(body));
 
     if (response.statusCode == 200) {
-      print("Register Berhasil");
+      print("Register berhasil");
       var responseData = json.decode(response.body);
-      log(responseData);
-      // var data = responseData['data'];
-      // print("Data: $data");
-
+      // var token = responseData['token'];
+      // print("Token: $token");
+      print(responseData);
       // SharedPreferences prefs = await SharedPreferences.getInstance();
-      // await prefs.setString('data', data);
+      // await prefs.setString('token', token);
       // print(prefs);
 
       // getStorage.write('token', "login");
       await showPlatformDialog(
         context: Get.overlayContext!,
         builder: (_) => BasicDialogAlert(
-          title: Text("Login Berhasil"),
+          title: Text("Register Berhasil"),
           content: Text("Selamat Datang"),
           actions: <Widget>[
             BasicDialogAction(
@@ -81,24 +80,8 @@ class RegisterController extends GetxController {
       Get.back();
       // Get.offAllNamed(Routes.AUTH);
     } else {
-      print("terjadi kesalahan saat melakukan login");
+      print("terjadi kesalahan: ${response.body}");
     }
   }
-  // final count = 0.obs;
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
 
-  // @override
-  // void onReady() {
-  //   super.onReady();
-  // }
-
-  // @override
-  // void onClose() {
-  //   super.onClose();
-  // }
-
-  // void increment() => count.value++;
 }

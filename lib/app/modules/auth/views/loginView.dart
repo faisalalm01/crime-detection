@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
 
+// class LoginView extends StatelessWidget{
+  // final LoginController _controller = Get.put(LoginController());
 class LoginView extends GetView<LoginController> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -48,6 +50,9 @@ class LoginView extends GetView<LoginController> {
               width: 350,
               child: TextField(
                 controller: emailController,
+                // onChanged: (value) {
+                //   _controller.email.value = value;
+                // },
                 // showCursor: true,
                 cursorColor: Colors.black,
                 style: TextStyle(color: Colors.black),
@@ -88,6 +93,9 @@ class LoginView extends GetView<LoginController> {
               width: 350,
               child: TextField(
                 controller: passwordController,
+                // onChanged: (value) {
+                //   _controller.password.value = value;
+                // },
                 style: TextStyle(color: Colors.black),
                 // readOnly: true,
                 showCursor: true,
@@ -153,40 +161,17 @@ class LoginView extends GetView<LoginController> {
             SizedBox(
               height: 20,
             ),
-            // Container(
-          // child: MaterialButton(
-          //   minWidth: 350,
-          //   onPressed: () {
-          //     // submitLogin();
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => (LandingPage())),
-          //     );
-
-          //   },
-          //   height: MediaQuery.of(context).size.height / 20,
-          //   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
-          //   shape: RoundedRectangleBorder(
-          //     borderRadius: BorderRadius.circular(20),
-          //   ),
-          //   color: Color.fromRGBO(183, 183, 138, 1),
-          //   child: Text(
-          //     'Login',
-          //     style: TextStyle(color: Colors.white),
-          //   ),
-          // ),
-        // ),
         SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
                 width: 350,
-                child: GetBuilder<LoginController>(
-                  init: LoginController(),
-                  builder: (controller) {
-                    return ElevatedButton(
+                child: 
+                // GetBuilder<LoginController>(
+                //   init: LoginController(),
+                //   builder: (controller) {
+                //     return 
+                    ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(context, 
-                        //   MaterialPageRoute(builder: (context) => (LandingPage()))
-                        // );
+                        // _controller.Login();
                         var loginController = Get.find<LoginController>();
 
                         var email = emailController.text;
@@ -202,9 +187,9 @@ class LoginView extends GetView<LoginController> {
                           ),
                           padding: EdgeInsets.all(20)),
                       child: Text("LOGIN"),
-                    );
-                  },
-                )
+                    )
+                //   },
+                // )
                 ),
           ],
         ),

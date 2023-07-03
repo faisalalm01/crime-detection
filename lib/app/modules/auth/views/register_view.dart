@@ -202,39 +202,17 @@ class RegisterView extends GetView<RegisterController> {
             ),
           ),
         ),
-        // SizedBox(height: 20),
-        // Container(
-        //   child: MaterialButton(
-        //     minWidth: 350,
-        //     onPressed: () {
-        //       Navigator.push(
-        //         context,
-        //         MaterialPageRoute(builder: (context) => (OtpView())),
-        //       );
-        //     },
-        //     height: MediaQuery.of(context).size.height / 20,
-        //     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 120),
-        //     shape: RoundedRectangleBorder(
-        //       borderRadius: BorderRadius.circular(20),
-        //     ),
-        //     color: Color.fromRGBO(183, 183, 138, 1),
-        //     child: Text(
-        //       'Register',
-        //       style: TextStyle(color: Colors.white),
-        //     ),
-        //   ),
-        // ),
+     
          SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
                 width: 350,
-                child: GetBuilder<RegisterController>(
+                child: 
+                GetBuilder<RegisterController>(
                   init: RegisterController(),
                   builder: (controller) {
-                    return ElevatedButton(
+                    return
+                     ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(context, 
-                        //   MaterialPageRoute(builder: (context) => (LandingPage()))
-                        // );
                         var registerController = Get.find<RegisterController>();
 
                         var fullname = fullnameController.text;

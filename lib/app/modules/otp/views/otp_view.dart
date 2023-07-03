@@ -11,7 +11,12 @@ import 'package:get/get.dart';
 import '../controllers/otp_controller.dart';
 
 class OtpView extends GetView<OtpController> {
-  const OtpView({Key? key}) : super(key: key);
+// final TextEditingController otpController = TextEditingController();
+
+  OtpView({Key? key}) : super(key: key);
+  OtpController otpController = Get.put(OtpController());
+// class OtpView extends StatelessWidget {
+//   final OtpController _controller = Get.put(OtpController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,48 +34,17 @@ class OtpView extends GetView<OtpController> {
                 height: 20,
               ),
               OtpTextField(
+                handleControllers: (controllers) => OtpController(),
                   numberOfFields: 5,
                   borderColor: Colors.white,
                   showFieldAsBox: true,
-                  onSubmit: (String verifCode) {
-                    if (verifCode == "22222") {
-                      showDialog(
-                        routeSettings: MaterialPage(
-                            child: Column(
-                          children: [Text("test")],
-                        )),
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text("Verification Success"),
-                            content: Text("Please return to the Login page"),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => AuthView()),
-                                  );
-                                },
-                                child: Text("Back To Login"),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    } else {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text("Verification Failed"),
-                            content: Text("Please enter the code correctly"),
-                          );
-                        },
-                      );
-                    }
-                  })
+                  onCodeChanged: (String code) {
+                  //handle validation or checks here
+                },
+                  onSubmit: (String verifikationCode) {
+                    // _controller.otp.value = otp;
+                    otpController.sendOTP(verifikationCode);
+                  }),
             ],
           ),
         ),

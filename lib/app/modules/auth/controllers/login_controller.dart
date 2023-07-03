@@ -12,58 +12,47 @@ import 'package:flutter_dialogs/flutter_dialogs.dart';
 import '../../../data/models/user_model.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement HomeController
+//   var email = ''.obs;
+//   var password = ''.obs;
+
+//   void Login() async {
+//     String url = API.baseUrl + API.authEndPoints.loginAccount;
+//     var response = await http.post(
+//         Uri.parse(url),
+//         body: {'email': email.value, 'password': password.value});
+//     if (response.statusCode == 200) {
+//       // Jika login berhasil, simpan token ke penyimpanan
+//       SharedPreferences prefs = await SharedPreferences.getInstance();
+//       String token =
+//           response.body; // Ubah ini sesuai dengan respons dari backend
+//       await prefs.setString('token', token);
+//       await showPlatformDialog(
+//         context: Get.overlayContext!,
+//         builder: (_) => BasicDialogAlert(
+//           title: Text("Login Berhasil"),
+//           content: Text("Selamat Datang"),
+//           actions: <Widget>[
+//             BasicDialogAction(
+//               title: Text("OK"),
+//               onPressed: () {
+//                 Get.back(); // Menutup AlertDialog
+//                 Get.offAllNamed(Routes.LPAGE);
+//               },
+//             ),
+//           ],
+//         ),
+//       );
+//     } else {
+//       Get.snackbar('Error', 'Login failed');
+//       print("terjadi kesalahan: ${response.body}");
+//     }
+//   }
+// }
   final emailController = TextEditingController;
   final passwordController = TextEditingController;
 
   final getStorage = GetStorage();
   late User user;
-
-  // final Future<SharedAppData
-
-
-  // void kliklogin(String email, String password) {
-  //   var body = {
-  //     'email': email, 'password': password
-  //   };
-  //   var url = Uri.http(API.baseUrl + API.authEndPoints.loginAccount);
-  //   // var input = jsonEncode({
-  //   //   "email" : email,
-  //   //   "password" : password
-  //   // });
-  //   http.post(
-  //     url,
-  //     headers: {"Content-Type" : "application/json"},
-  //     body: json.encode(body),
-  //     )
-  //   .then((res){
-  //     if(res.statusCode == 200) {
-  //       var rs = json.decode(res.body);
-  //       if(rs['code'] == 200) {
-  //         print("login success");
-  //         getStorage.write("status", "login");
-  //         user = User.fromJson(rs['data']);
-  //         getStorage.write('user', user.toJson());
-  //         Get.offAllNamed(Routes.LPAGE);
-  //       }else {
-  //         // print(rs['code']);
-  //         print("ndda berhasil login");
-  //       }
-  //     }else {
-  //       print("err");
-  //     }
-  //   }).catchError((err) {
-  //     print(err);
-  //   });
-    // getStorage.write('status', 'login');
-    // Future.delayed(Duration(seconds: 2),() {
-    //   Get.offAllNamed(Routes.HOME);
-    // });
-  // }
-
-  // submitLogin() {
-  //   kliklogin(emailController.text, passwordController.text);
-  // }
   
   void klikLogin(String email, String password) async {
 
@@ -96,7 +85,6 @@ class LoginController extends GetxController {
             BasicDialogAction(
               title: Text("OK"),
               onPressed: () {
-                // Menutup AlertDialog dan pindah ke halaman OTP
                 Get.back(); // Menutup AlertDialog
                 Get.offAllNamed(Routes.LPAGE); // Pindah ke halaman OTP
               },
@@ -105,21 +93,6 @@ class LoginController extends GetxController {
         ),
       );
     } else if (response.statusCode == 400) {
-      //   await showPlatformDialog(
-      //   context: Get.overlayContext!,
-      //   builder: (_) => BasicDialogAlert(
-      //     title: Text("Login Gagal"),
-      //     actions: <Widget>[
-      //       BasicDialogAction(
-      //         title: Text("OK"),
-      //         onPressed: () {
-      //           // Menutup AlertDialog dan pindah ke halaman OTP
-      //           Get.back(); // Menutup AlertDialog
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // );
       print("Terjadi kesalahan: ${response.body}");
       Get.back();
       // Get.offAllNamed(Routes.AUTH);
