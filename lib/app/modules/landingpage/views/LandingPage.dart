@@ -95,6 +95,7 @@ class LandingPage extends StatelessWidget {
               HomeView(),
               HistoryView(),
               ProfileView()
+              // UserDetailPage()
               // ExplorePage(),
               // PlacesPage(),
               // SettingsPage(),

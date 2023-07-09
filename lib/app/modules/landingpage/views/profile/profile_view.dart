@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_new, sort_child_properties_last
+// // ignore_for_file: prefer_const_constructors, unnecessary_new, sort_child_properties_last
 
+import 'package:capstone_s6/app/modules/landingpage/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -332,3 +333,26 @@ class MapScreenState extends State<ProfileView>
     );
   }
 }
+
+// import 'package:get/get.dart';
+
+// class UserDetailPage extends StatelessWidget {
+//   final ProfileController _controller = Get.put(ProfileController());
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('User Detail'),
+//       ),
+//       body: Center(
+//         child: Obx(
+//           () => Text(
+//             'Username: ${_controller.email.value}',
+//             style: TextStyle(fontSize: 18),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

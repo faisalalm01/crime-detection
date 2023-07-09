@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, depend_on_referenced_packages
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -29,7 +31,7 @@ class OtpController extends GetxController {
     // Mengirim permintaan POST ke endpoint Flask
     var response = await http.post(
       Uri.parse(url),
-      headers: {"Content-Type": "application/json"},
+      // headers: {"Content-Type": "application/json"},
       body: json.encode(body),
     );
     print(response.body);

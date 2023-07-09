@@ -34,6 +34,7 @@ class AppPages {
     GetPage(
       name: _Paths.PROFILE,
       page: () => ProfileView(),
+      // page: () => UserDetailPage(),
     ),
     GetPage(
       name: _Paths.LPAGE,
