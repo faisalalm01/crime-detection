@@ -17,8 +17,8 @@ class HomeBinding extends Bindings {
     Get.lazyPut<ProfileController>(
       () => ProfileController()
       );
-       Get.lazyPut<HistoryController>(
-      () => HistoryController(),
+       Get.put(
+        HistoryController(),
     );
   }
 }

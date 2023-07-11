@@ -24,11 +24,15 @@ class ProfileController extends GetxController {
     if (token != null) {
       // Panggil API untuk mendapatkan detail pengguna berdasarkan token
       var url = API.baseUrl + API.userEndPoints.userDetail; // Ganti dengan URL API untuk mendapatkan data pengguna
-      var response = await http.get(Uri.parse(url), headers: {'Authorization': 'Bearer $token'});
+      var response = await http.get(Uri.parse(url),
+        headers: {'Authorization': 'bearer $token'},
+      );
+
+      final preferences = await SharedPreferences.getInstance();
+      // preferences.setString('email', email);
+      preferences.setString('token', token);
+
       if (response.statusCode == 200) {
-        // Berhasil mendapatkan data pengguna dari API
-        // Misalnya, jika respons API berupa JSON, Anda dapat menggunakan paket 'dart:convert' untuk menguraikan data JSON
-        // Dalam contoh ini, kita asumsikan respons API berupa JSON dengan properti 'username' yang berisi nama pengguna
         var responseData = json.decode(response.body);
         fullname.value = responseData['fullname'];
         email.value = responseData['email'];

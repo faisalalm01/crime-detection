@@ -21,23 +21,24 @@ class LoginController extends GetxController {
   void klikLogin(String email, String password) async {
 
     var body = {'email': email, 'password': password};
-    print(email);
-    print(password);
+
     var response = await http.post(Uri.parse(API.baseUrl + API.authEndPoints.loginAccount),
         headers: {"Content-Type": "application/json"}, body: json.encode(body));
-      var responseData = json.decode(response.body);
-      var token = responseData['token'];
 
     if (response.statusCode == 200) {
+      var responseData = json.decode(response.body);
+      var token = responseData['token'];
       print("login berhasil");
       print("Token: $token");
       print(responseData);
 
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString('token', token);
-      print(prefs);
+      // SharedPreferences prefs = await SharedPreferences.getInstance();
+      // await prefs.setString('token', token);
+      // print(prefs);
+      final preferences = await SharedPreferences.getInstance();
+      preferences.setString('email', email);
+      preferences.setString('token', token);
 
-      getStorage.write('token', "login");
       await showPlatformDialog(
         context: Get.overlayContext!,
         builder: (_) => BasicDialogAlert(

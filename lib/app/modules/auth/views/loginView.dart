@@ -166,10 +166,7 @@ class LoginView extends GetView<LoginController> {
                 height: MediaQuery.of(context).size.height / 20,
                 width: 350,
                 child: 
-                // GetBuilder<LoginController>(
-                //   init: LoginController(),
-                //   builder: (controller) {
-                //     return 
+               
                     ElevatedButton(
                       onPressed: () {
                         // _controller.Login();

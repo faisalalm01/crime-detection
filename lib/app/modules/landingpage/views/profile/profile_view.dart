@@ -1,5 +1,7 @@
 // // ignore_for_file: prefer_const_constructors, unnecessary_new, sort_child_properties_last
 
+// ignore_for_file: unnecessary_new, prefer_const_constructors
+
 import 'package:capstone_s6/app/modules/landingpage/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,27 +36,7 @@ class MapScreenState extends State<ProfileView>
                 // color: Colors.amber,
                 child: new Column(
                   children: <Widget>[
-                    // Padding(
-                    //     padding: EdgeInsets.only(left: 20.0, top: 20.0),
-                    //     child: new Row(
-                    //       crossAxisAlignment: CrossAxisAlignment.start,
-                    //       children: <Widget>[
-                    //         new Icon(
-                    //           Icons.arrow_back_ios,
-                    //           color: Colors.black,
-                    //           size: 22.0,
-                    //         ),
-                    //         Padding(
-                    //           padding: EdgeInsets.only(left: 25.0),
-                    //           child: new Text('PROFILE',
-                    //               style: TextStyle(
-                    //                   fontWeight: FontWeight.bold,
-                    //                   fontSize: 20.0,
-                    //                   fontFamily: 'sans-serif-light',
-                    //                   color: Colors.black)),
-                    //         )
-                    //       ],
-                    //     )),
+                    
                     Padding(
                       padding: EdgeInsets.only(top: 20.0),
                       child: new Stack(fit: StackFit.loose, children: <Widget>[

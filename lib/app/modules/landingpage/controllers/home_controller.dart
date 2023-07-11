@@ -1,3 +1,4 @@
+import 'package:capstone_s6/utils/api.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:location/location.dart';
@@ -54,7 +55,7 @@ class HomeController extends GetxController {
 
       if (result != null) {
         String fileName = path.basename(result.files.single.path!);
-        String url = 'https://example.com/upload'; // Ganti dengan URL endpoint upload Anda
+        String url = API.baseUrl + API.historyEndPoint.deteksi; // Ganti dengan URL endpoint upload Anda
 
         dio.Dio dioClient = dio.Dio();
         dio.FormData formData = dio.FormData.fromMap({
@@ -63,8 +64,8 @@ class HomeController extends GetxController {
             filename: fileName,
             contentType: MediaType('video', 'mp4'),
           ),
-          'latitude': latitude.toString(),
-          'longitude': longitude.toString(),
+          // 'latitude': latitude.toString(),
+          // 'longitude': longitude.toString(),
         });
 
         await dioClient.post(
@@ -72,13 +73,14 @@ class HomeController extends GetxController {
           data: formData,
           options: dio.Options(contentType: 'multipart/form-data'),
         );
-
+        print("success upload");
         // Tambahkan logika lanjutan setelah upload selesai
         // Misalnya, menampilkan pesan berhasil atau melakukan navigasi ke halaman lain
       }
     } catch (e) {
       // Tangani error jika terjadi kesalahan saat upload
-      print(e);
+      print("error upload video");
+      // print(e);
     }
   }
 }

@@ -29,7 +29,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HISTORY,
-      page: () => const HistoryView(),
+      page: () => HistoryView(),
     ),
     GetPage(
       name: _Paths.PROFILE,
