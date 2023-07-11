@@ -38,7 +38,7 @@ class RegisterView extends GetView<RegisterController> {
           ],
         ),
         SizedBox(
-          height: 20,
+          height: 10,
         ),
         Container(
           height: 50,
@@ -77,7 +77,7 @@ class RegisterView extends GetView<RegisterController> {
             ),
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 5),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -121,7 +121,7 @@ class RegisterView extends GetView<RegisterController> {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 5,
         ),
         Container(
           height: 50,
@@ -162,7 +162,7 @@ class RegisterView extends GetView<RegisterController> {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 5,
         ),
         Container(
           height: 50,
@@ -202,7 +202,9 @@ class RegisterView extends GetView<RegisterController> {
             ),
           ),
         ),
-     
+        SizedBox(
+          height: 5,
+        ),
          SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
                 width: 350,
@@ -228,7 +230,7 @@ class RegisterView extends GetView<RegisterController> {
                           shape: new RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          padding: EdgeInsets.all(20)),
+                          padding: EdgeInsets.all(0)),
                       child: Text("Register"),
                     );
                   },

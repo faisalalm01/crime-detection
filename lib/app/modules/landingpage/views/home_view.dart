@@ -90,13 +90,25 @@ class HomeView extends GetView<HomeController> {
                                 Row(
                                   children: <Widget>[
                                     Expanded(
-                                      child: SimpleDialogOption(
-                                        onPressed: getImageGallery,
-                                        child: Text(
-                                          "Gallery",
-                                          style: TextStyle(fontSize: 15),
-                                        ),
+                                        child: MaterialButton(
+                                      child: Text(
+                                        "Upload",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17.0,
+                                            fontWeight: FontWeight.bold),
                                       ),
+                                      minWidth: 50,
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              20,
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 10, horizontal: 120),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      onPressed: getImageCamera,
+                                    )
                                     )
                                   ],
                                 ),

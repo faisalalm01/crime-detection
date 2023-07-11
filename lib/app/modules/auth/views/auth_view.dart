@@ -23,7 +23,7 @@ class _AuthViewState extends State<AuthView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: EditableText.debugDeterministicCursor,
+      // resizeToAvoidBottomInset: EditableText.debugDeterministicCursor,
       backgroundColor: Color.fromRGBO(101, 136, 100, 1),
       body: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),

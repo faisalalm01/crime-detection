@@ -29,7 +29,7 @@ class OtpView extends GetView<OtpController> {
                 "Input Code OTP",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              Text("Check your your Email to get code OTP"),
+              Text("Check your Email to get code OTP"),
               SizedBox(
                 height: 20,
               ),

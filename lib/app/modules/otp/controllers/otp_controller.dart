@@ -31,10 +31,11 @@ class OtpController extends GetxController {
     // Mengirim permintaan POST ke endpoint Flask
     var response = await http.post(
       Uri.parse(url),
-      // headers: {"Content-Type": "application/json"},
+      headers: {"Content-Type": "application/json"},
       body: json.encode(body),
     );
     print(response.body);
+
     if (response.statusCode == 200) {
       // OTP berhasil diverifikasi
       print('OTP diverifikasi dengan sukses.');
@@ -57,9 +58,43 @@ class OtpController extends GetxController {
       );
       // Perbarui nilai kondisi pada database
       // Tambahkan tindakan yang diinginkan setelah verifikasi OTP berhasil
-    } else {
+    } else if (response.statusCode == 401) {
       // Verifikasi OTP gagal atau terjadi kesalahan lainnya
       print('Verifikasi OTP gagal.');
+      await showPlatformDialog(
+        context: Get.overlayContext!,
+        builder: (_) => BasicDialogAlert(
+          title: Text("OTP GAGAL"),
+          content: Text("Kode OTP Salah"),
+          actions: <Widget>[
+            BasicDialogAction(
+              title: Text("OK"),
+              onPressed: () {
+                // Menutup AlertDialog dan pindah ke halaman OTP
+                Get.back(); // Menutup AlertDialog
+              },
+            ),
+          ],
+        ),
+      );
+    }else{
+      print("kesalahan internal");
+      await showPlatformDialog(
+        context: Get.overlayContext!,
+        builder: (_) => BasicDialogAlert(
+          title: Text("OTP GAGAL"),
+          content: Text("Bad Gateway"),
+          actions: <Widget>[
+            BasicDialogAction(
+              title: Text("OK"),
+              onPressed: () {
+                // Menutup AlertDialog dan pindah ke halaman OTP
+                Get.back(); // Menutup AlertDialog
+              },
+            ),
+          ],
+        ),
+      );
     }
   }
 

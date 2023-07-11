@@ -21,7 +21,8 @@ class LoginView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return 
+    Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -185,7 +186,7 @@ class LoginView extends GetView<LoginController> {
                           shape: new RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          padding: EdgeInsets.all(20)),
+                          padding: EdgeInsets.all(0)),
                       child: Text("LOGIN"),
                     )
                 //   },
