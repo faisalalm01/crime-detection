@@ -30,7 +30,6 @@ class LoginController extends GetxController {
       var token = responseData['token'];
       print("login berhasil");
       print("Token: $token");
-      print(responseData);
 
       // SharedPreferences prefs = await SharedPreferences.getInstance();
       // await prefs.setString('token', token);

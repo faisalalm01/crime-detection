@@ -210,10 +210,20 @@ class HistoryView extends StatelessWidget {
               itemBuilder: (context, index) {
                 final item = userController.dataList[index];
                 print(item);
-                return ListTile(
-                  title: Text(item['title']),
-                  subtitle: Text(item['id'].toString()),
+                Column(
+                  children: [
+                  // Text(
+                  //   item['latitude'].t
+                  // ),
+                  // Text(
+                  //   item['longatitude'].toString()
+                  // ),
+                  ListTile(
+                  title: Text(item['filename']),
+                  subtitle: Text(item['tanggal'].toString()),
                   // subtitle: Text(item['description']),
+                )
+                  ],
                 );
               },
             );

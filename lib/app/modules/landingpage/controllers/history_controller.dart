@@ -10,7 +10,7 @@ class HistoryController extends GetxController {
 
   Future<void> fetchData() async {
     try {
-      final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+      final response = await http.get(Uri.parse(API.baseUrl + API.historyEndPoint.history));
       if (response.statusCode == 200) {
         dataList.value = jsonDecode(response.body);
         print(dataList.value = jsonDecode(response.body));

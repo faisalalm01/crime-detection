@@ -75,13 +75,32 @@ class HomeView extends GetView<HomeController> {
                                 Row(
                                   children: <Widget>[
                                     Expanded(
-                                        child: SimpleDialogOption(
-                                      onPressed: getImageCamera,
+                                        child: MaterialButton(
                                       child: Text(
-                                        "Camera",
-                                        style: TextStyle(fontSize: 15),
+                                        "Upload",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17.0,
+                                            fontWeight: FontWeight.bold),
                                       ),
-                                    )),
+                                      minWidth: 50,
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              20,
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      onPressed: getImageCamera
+                                    )
+                                        //   ElevatedButton(
+                                        // onPressed: () {
+                                        //   controller.uploadVideo();
+                                        // },
+                                        // child: Text('Upload'),
+                                        // ),
+                                        )
                                   ],
                                 ),
                                 SizedBox(
@@ -90,35 +109,34 @@ class HomeView extends GetView<HomeController> {
                                 Row(
                                   children: <Widget>[
                                     Expanded(
-                                      child:
-                                              MaterialButton(
-                                            child: Text(
-                                              "Upload",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 17.0,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            minWidth: 50,
-                                            height:
-                                                MediaQuery.of(context).size.height /
-                                                    20,
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 10),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(20),
-                                            ),
-                                            onPressed: () {
-                                              controller.uploadVideo();
-                                            },
-                                          )
+                                        child: MaterialButton(
+                                      child: Text(
+                                        "Upload",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17.0,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      minWidth: 50,
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              20,
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      onPressed: () {
+                                        controller.uploadVideo();
+                                      },
+                                    )
                                         //   ElevatedButton(
                                         // onPressed: () {
                                         //   controller.uploadVideo();
                                         // },
                                         // child: Text('Upload'),
-                                      // ),
-                                    )
+                                        // ),
+                                        )
                                   ],
                                 ),
                               ],
