@@ -288,7 +288,8 @@ class MapScreenState extends State<ProfileView>
                                 ),
                               ),
                             ],
-                          )),
+                          )
+                          ),
                           _logoutButton(),
                       
                       !_status ? _getActionButtons() : new Container(),

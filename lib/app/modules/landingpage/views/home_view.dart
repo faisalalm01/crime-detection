@@ -77,7 +77,7 @@ class HomeView extends GetView<HomeController> {
                                     Expanded(
                                         child: MaterialButton(
                                       child: Text(
-                                        "Upload",
+                                        "Camera",
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 17.0,

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:capstone_s6/app/modules/landingpage/views/LandingPage.dart';
 import 'package:capstone_s6/utils/api.dart';
 import 'package:flutter/material.dart';
@@ -83,35 +85,6 @@ class _EditDataState extends State<EditDataPage> {
     }
   }
 
-  Future<void> _showPopup() async {
-    final TextEditingController popupController = TextEditingController();
-
-    await showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Your Code'),
-          content: TextField(
-            controller: popupController,
-            decoration: InputDecoration(
-              labelText: 'Your Code',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text('OK'),
-              onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
-                // Assign the value to the main code controller
-                _codeController.text = popupController.text;
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -130,21 +103,6 @@ class _EditDataState extends State<EditDataPage> {
                 'https://img.freepik.com/premium-vector/flat-design-cybercrime-with-edit-profile-change-user-login-account_106954-2042.jpg?w=2000',
                 width: 200,
                 height: 200,
-              ),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: _showPopup,
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.green,
-                  minimumSize: Size(400, 50),
-                  padding: EdgeInsets.all(10),
-                  textStyle: TextStyle(fontSize: 18),
-                ),
-                child: const Text(
-                  'Enter Code',
-                  style: TextStyle(fontSize: 16),
-                ),
               ),
               const SizedBox(height: 20),
               const Text(

@@ -1,18 +1,20 @@
 import 'package:get/get.dart';
 
-import 'package:capstone_s6/app/modules/landingpage/views/history_view.dart';
-import 'package:capstone_s6/app/modules/landingpage/views/profile/profile_view.dart';
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/auth/views/auth_view.dart';
 import '../modules/forgotpswd/bindings/forgotpswd_binding.dart';
 import '../modules/forgotpswd/views/forgotpswd_view.dart';
 import '../modules/landingpage/bindings/home_binding.dart';
 import '../modules/landingpage/views/LandingPage.dart';
+import '../modules/landingpage/views/history_view.dart';
 import '../modules/landingpage/views/home_view.dart';
+import '../modules/landingpage/views/profile/profile_view.dart';
 import '../modules/otp/bindings/otp_binding.dart';
 import '../modules/otp/views/otp_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/visual/bindings/visual_binding.dart';
+import '../modules/visual/views/visual_view.dart';
 
 part 'app_routes.dart';
 
@@ -47,10 +49,9 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: _Paths.AUTH, 
-      page: () => const AuthView(), 
-      binding: AuthBinding()
-    ),
+        name: _Paths.AUTH,
+        page: () => const AuthView(),
+        binding: AuthBinding()),
     GetPage(
       name: _Paths.FORGOTPSWD,
       page: () => const ForgotpswdView(),
@@ -60,6 +61,11 @@ class AppPages {
       name: _Paths.OTP,
       page: () => OtpView(),
       binding: OtpBinding(),
+    ),
+    GetPage(
+      name: _Paths.VISUAL,
+      page: () => const VisualView(),
+      binding: VisualBinding(),
     ),
   ];
 }

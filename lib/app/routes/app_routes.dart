@@ -14,6 +14,7 @@ abstract class Routes {
   static const VERIFY = _Paths.VERIFY;
   static const FORGOTPSWD = _Paths.FORGOTPSWD;
   static const OTP = _Paths.OTP;
+  static const VISUAL = _Paths.VISUAL;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const VERIFY = '/verif';
   static const FORGOTPSWD = '/forgotpassword';
   static const OTP = '/otp';
+  static const VISUAL = '/visual';
 }

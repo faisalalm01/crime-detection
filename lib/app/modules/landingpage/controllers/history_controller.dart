@@ -1,5 +1,5 @@
-import 'package:capstone_s6/app/data/Service.dart';
-import 'package:capstone_s6/app/data/model/movie.dart';
+// import 'package:capstone_s6/app/data/Service.dart';
+// import 'package:capstone_s6/app/data/model/movie.dart';
 import 'package:capstone_s6/utils/api.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -10,7 +10,10 @@ class HistoryController extends GetxController {
 
   Future<void> fetchData() async {
     try {
-      final response = await http.get(Uri.parse(API.baseUrl + API.historyEndPoint.history));
+      final response = await http.get(Uri.parse(
+        // API.baseUrl + API.historyEndPoint.history
+        "https://dummyjson.com/todos"
+        ));
       if (response.statusCode == 200) {
         dataList.value = jsonDecode(response.body);
         print(dataList.value = jsonDecode(response.body));
